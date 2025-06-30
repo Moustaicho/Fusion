@@ -1,3 +1,9 @@
+#Project Related
+*.elf
+*.gba
+build/
+run.bat #Make your own batch file to call "make" and run your emulator with the .gba file!
+
 # Prerequisites
 *.d
 
