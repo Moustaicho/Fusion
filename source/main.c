@@ -1,13 +1,15 @@
 //Find help here => https://gbadev.net/
 
+#include "Utility.h"
+
 int main(void)
 {
 	//Example code from demo samples showing three dots
-    *(unsigned int*)0x04000000 = 0x0403;
+    REG_DISPCNT= DCNT_MODE3 | DCNT_BG2;
 
-    ((unsigned short*)0x06000000)[120+80*240] = 0x001F;
-    ((unsigned short*)0x06000000)[136+80*240] = 0x03E0;
-    ((unsigned short*)0x06000000)[120+96*240] = 0x7C00;
+    m3_plot( 120, 80, RGB15(31, 0, 0) );    // or CLR_RED
+    m3_plot( 136, 80, RGB15( 0,31, 0) );    // or CLR_LIME
+    m3_plot( 120, 96, RGB15( 0, 0,31) );    // or CLR_BLUE
 
     while(1);
 
